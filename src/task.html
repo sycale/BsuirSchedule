@@ -3,3 +3,27 @@
 <button class = "btn">group</button>
 <button class = "teacher">teacher</button>
 <div class = "body"></div>
+
+<button id="start">Get teachers</button>
+<div class="professors d-none" id="professor" data-bind="foreach: professors">
+    <img class="w-100" data-bind="attr: {src: photoLink}">
+    <br>
+    <span data-bind="text: firstName + ' ' + lastName + ' ' + middleName"></span>
+    <br>
+</div>
+
+<div class="professors d-none" id="professor" data-bind="foreach: docent">
+    <img class="w-100" data-bind="attr: {src: photoLink}">
+    <br>
+    <span data-bind="text: firstName + ' ' + lastName + ' ' + middleName"></span>
+    <br>
+</div>
+
+<div class="professors d-none" id="professor" data-bind="foreach: others">
+    <img class="w-100" data-bind="attr: {src: photoLink}">
+    <br>
+    <span data-bind="text: firstName + ' ' + lastName + ' ' + middleName"></span>
+    <br>
+</div>
+
+
