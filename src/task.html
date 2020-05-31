@@ -1,21 +1,31 @@
-<input type = "textarea" class = "us">
 
-<button class = "btn">group</button>
-<button class = "teacher">teacher</button>
+<div class="page">
+    <div class="header">
+    <div><img src="src/pics/logo.jpg" class="logot"></div>
+    <div class="search">
+<input type = "textarea" class = "us">
+</div>
+
+<button class = "btn">Group</button>
+    </div>
 <div class = "body"></div>
 
 <button id="start">Get teachers</button>
-<div class="professors d-none" id="professor" data-bind="foreach: professors">
+<div class="professors d-none" class="asd" id="professor" data-bind="foreach: professors">
+   
     <img class="w-100" data-bind="attr: {src: photoLink}">
+    
     <br>
-    <span data-bind="text: firstName + ' ' + lastName + ' ' + middleName"></span>
+    <div class="anis">
+    <span data-bind="text: lastName + ' ' + firstName + ' ' + middleName"></span>
+    </div>
     <br>
 </div>
 
 <div class="professors d-none" id="professor" data-bind="foreach: docent">
     <img class="w-100" data-bind="attr: {src: photoLink}">
     <br>
-    <span data-bind="text: firstName + ' ' + lastName + ' ' + middleName"></span>
+    <span data-bind="text: lastName + ' ' + firstName + ' ' + middleName"></span>
     <br>
 </div>
 
@@ -26,4 +36,4 @@
     <br>
 </div>
 
-
+</div>

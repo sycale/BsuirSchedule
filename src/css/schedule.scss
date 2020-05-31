@@ -1,0 +1,51 @@
+.w-100 {
+    width:200px;
+    height:200px;
+    display:flex;
+    flex-direction: row;
+}
+.phot {
+    display:flex;
+    flex-direction: row;
+}
+.page {
+    background-color: black;
+    
+}
+.search {
+    display:flex;
+    align-content: center;
+   
+    
+}
+.anis {
+    color:orange;
+}
+.asd {
+    display: flex;
+    flex-direction:row;
+}
+.logot {
+    width: 90px;
+    height: 80px;
+    margin-left: 200px;
+}
+.header {
+    display : flex;
+    flex-direction:row;
+}
+.us {
+    height: 30px;
+    width: 400px;
+    margin-top:28px;
+    border-radius:5px;
+    background-color: orange;
+}
+.btn {
+    height : 30px;
+    width: 70px;
+    margin-top:28px;
+    margin-left:20px;
+    border-radius: 3px;
+    color: orange;
+}
