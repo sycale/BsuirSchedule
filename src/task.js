@@ -40,9 +40,7 @@ $(document).ready(() => {
           prof.push(elem);
         } else if (elem.rank === 'Доцент') {
           docent.push(elem);
-        }
-        else if (elem.rank === null)
-        {
+        } else if (elem.rank === null) {
           others.push(elem);
         }
       });
@@ -53,54 +51,48 @@ $(document).ready(() => {
     },
   );
 
-  $('.btn').click(() => {
+  $('#getGroup').click(() => {
     $('.body').empty();
-    const user = $('.us').val();
-    getUserInfo(user).then(
-      (data) => {
-        data.schedules.forEach((day) => {
-          $('.body').append(`<h1>${day.weekDay} : <br></h1>`);
-          day.schedule.forEach((less) => {
-            $('.body').append(`<span>${less.subject} - ${less.lessonType}</span> <br>`);
+    $('.temp-bg').removeClass('d-none');
+    $('#teachBlock').addClass('d-none');
+    const user = $('#group').val();
+    if (user === '') {
+      alert('Please, fill input correctly');
+    } else {
+      getUserInfo(user).then(
+        (data) => {
+          $('.temp-bg').addClass('d-none');
+          data.schedules.forEach((day) => {
+            $('.body').append(`<h1>${day.weekDay} : <br></h1>`);
+            day.schedule.forEach((less) => {
+              if (less.lessonType === 'ЛР') {
+                $('.body').append(
+                  `<span class = "lab">${less.subject} - ${less.lessonType}</span> <br>`,
+                );
+              } else if (less.lessonType === 'ПЗ') {
+                $('.body').append(
+                  `<span class = "pract">${less.subject} - ${less.lessonType}</span> <br>`,
+                );
+              } else {
+                $('.body').append(
+                  `<span class = "lect">${less.subject} - ${less.lessonType}</span> <br>`,
+                );
+              }
+            });
+            $('.body').append('<br>');
           });
-          $('.body').append('<br>');
-        });
-      },
-      (errData) => {
-        console.log(errData);
-      },
-    );
+        },
+        (errData) => {
+          console.log(errData);
+          alert('There is no such group');
+        },
+      );
+    }
   });
 
-  $('#start').click(() => {
-    $('.professors').removeClass('d-none');
-  });
-
-  $('.teacher').click(() => {
+  $('#getTeach').click(() => {
+    $('.temp-bg').addClass('d-none');
     $('.body').empty();
-    console.log('test');
-    const teacher = $('.us').val();
-    getTeacherInfo(teacher).then(
-      (data) => {
-        console.log(data);
-        $('.body')
-          .append(`<h1>${data.employee.firstName} ${data.employee.lastName} ${data.employee.middleName}</h1> <br>
-      <img src = "${data.employee.photoLink}">
-      `);
-        data.schedules.forEach((day) => {
-          $('.body').append(`<h1>${day.weekDay}: </h1><br>
-        
-        `);
-          day.schedule.forEach((less) => {
-            $('.body').append(
-              `<span> ${less.subject} : ${less.lessonType} - ${less.auditory} - ${less.lessonTime}  <br>`,
-            );
-          });
-        });
-      },
-      (errData) => {
-        console.log(errData);
-      },
-    );
+    $('#teachBlock').removeClass('d-none');
   });
 });

@@ -1,39 +1,47 @@
-
 <div class="page">
-    <div class="header">
-    <div><img src="src/pics/logo.jpg" class="logot"></div>
-    <div class="search">
-<input type = "textarea" class = "us">
-</div>
-
-<button class = "btn">Group</button>
+  <div class="header">
+    <div class="col-3 align-items-end d-flex justify-content-end">
+      <img src="src/assets/logo.jpg" class="logot" />
     </div>
-<div class = "body"></div>
-
-<button id="start">Get teachers</button>
-<div class="professors d-none" class="asd" id="professor" data-bind="foreach: professors">
-   
-    <img class="w-100" data-bind="attr: {src: photoLink}">
-    
-    <br>
-    <div class="anis">
-    <span data-bind="text: lastName + ' ' + firstName + ' ' + middleName"></span>
+    <div class="search col-6">
+      <input type="textarea" class="search__input" id="group" placeholder="######" />
     </div>
-    <br>
-</div>
 
-<div class="professors d-none" id="professor" data-bind="foreach: docent">
-    <img class="w-100" data-bind="attr: {src: photoLink}">
-    <br>
-    <span data-bind="text: lastName + ' ' + firstName + ' ' + middleName"></span>
-    <br>
-</div>
+    <div class="search-btn col-3 d-flex justify-content-around">
+      <button class="btn btn-warning search-btn__button btn-small" id="getGroup">Group</button>
+      <button id="getTeach" class="btn btn-warning search-btn__button btn-small">
+        Get teachers
+      </button>
+    </div>
+  </div>
+  <div class="body d-flex flex-column align-items-center"></div>
+  <div id="teachBlock" class="d-none mt-5 align-items-center">
+    <div class="professors" id="professor" data-bind="foreach: professors">
+      <div class="anis">
+        <img class="prof-pic mt-3" data-bind="attr: {src: photoLink}" />
+        <span class="mt-5 mb-5" data-bind="text: fio"></span>
+      </div>
+    </div>
 
-<div class="professors d-none" id="professor" data-bind="foreach: others">
-    <img class="w-100" data-bind="attr: {src: photoLink}">
-    <br>
-    <span data-bind="text: firstName + ' ' + lastName + ' ' + middleName"></span>
-    <br>
-</div>
+    <div class="professors" id="docent" data-bind="foreach: docent">
+      <div class="professors" id="docent" data-bind="foreach: professors">
+        <div class="anis">
+          <img class="prof-pic mt-3" data-bind="attr: {src: photoLink}" />
+          <span class="mt-5 mb-5" data-bind="text: fio"></span>
+        </div>
+      </div>
 
+      <div class="professors " id="others" data-bind="foreach: others">
+        <div class="professors" id="docent" data-bind="foreach: professors">
+          <div class="anis">
+            <img class="prof-pic mt-3" data-bind="attr: {src: photoLink}" />
+            <span class="mt-5 mb-5" data-bind="text: fio"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="temp-bg justify-content-center mt-5">
+    <img src="src/assets/bg.png" />
+  </div>
 </div>

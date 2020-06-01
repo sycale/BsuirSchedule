@@ -1,51 +1,107 @@
 .w-100 {
-    width:200px;
-    height:200px;
-    display:flex;
-    flex-direction: row;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
 }
 .phot {
-    display:flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
+
+.body {
+    color: white;
+}
+
+.search-btn {
+    justify-content: space-between;
+    display: flex;
+
+    &__button {
+        align-self: center;
+    }
+}
+
+.prof-pic {
+    width: 80%;
+    height: 250px;
+}
+
+.professors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.temp-bg {
+    display: flex;
+}
+
 .page {
-    background-color: black;
-    
+  background-color: black;
 }
+
+body {
+    background-color: black !important;
+}
+
 .search {
-    display:flex;
-    align-content: center;
-   
-    
+  display: flex;
+  align-content: center;
+
+  &__input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 30px;
+    border-radius: 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -ms-border-radius: 3px 0 0 3px;
+    -o-border-radius: 3px 0 0 3px;
+    border: none;
+    color: #cacaca;
+    background-color: #363636;
+    display: inline-block;
+    font-size: 14px;
+    outline: 0;
+    padding: 2px 5px;
+    vertical-align: top;
+    align-self: center;
+  }
 }
 .anis {
-    color:orange;
+  color: orange;
+  display: flex;
+  flex-direction: column;
 }
 .asd {
-    display: flex;
-    flex-direction:row;
+  display: flex;
+  flex-direction: row;
 }
 .logot {
-    width: 90px;
-    height: 80px;
-    margin-left: 200px;
+  width: 90px;
+  height: 80px; 
 }
 .header {
-    display : flex;
-    flex-direction:row;
+  display: flex;
+  flex-direction: row;
 }
 .us {
-    height: 30px;
-    width: 400px;
-    margin-top:28px;
-    border-radius:5px;
-    background-color: orange;
+  height: 30px;
+  width: 400px;
+  margin-top: 28px;
+  border-radius: 5px;
+  background-color: orange;
 }
-.btn {
-    height : 30px;
-    width: 70px;
-    margin-top:28px;
-    margin-left:20px;
-    border-radius: 3px;
-    color: orange;
+
+.lab {
+    background-color: yellow;
+}
+
+.pract {
+    background-color: red;
+}
+
+.lect {
+    background: green;
 }
