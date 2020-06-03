@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="body d-flex flex-column align-items-center"></div>
-  <div id="teachBlock" class="d-none mt-5 align-items-center">
+  <div id="teachBlock" class="d-none mt-5 align-items-center pl-5">
     <div class="professors" id="professor" data-bind="foreach: professors">
       <div class="anis">
         <img class="prof-pic mt-3" data-bind="attr: {src: photoLink}" />
@@ -24,19 +24,15 @@
     </div>
 
     <div class="professors" id="docent" data-bind="foreach: docent">
-      <div class="professors" id="docent" data-bind="foreach: professors">
+      <div class="anis">
+        <img class="prof-pic mt-3" data-bind="attr: {src: photoLink}" />
+        <span class="mt-5 mb-5" data-bind="text: fio"></span>
+      </div>
+    </div>
+      <div class="professors " id="others" data-bind="foreach: others">
         <div class="anis">
           <img class="prof-pic mt-3" data-bind="attr: {src: photoLink}" />
           <span class="mt-5 mb-5" data-bind="text: fio"></span>
-        </div>
-      </div>
-
-      <div class="professors " id="others" data-bind="foreach: others">
-        <div class="professors" id="docent" data-bind="foreach: professors">
-          <div class="anis">
-            <img class="prof-pic mt-3" data-bind="attr: {src: photoLink}" />
-            <span class="mt-5 mb-5" data-bind="text: fio"></span>
-          </div>
         </div>
       </div>
     </div>
